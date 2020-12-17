@@ -1,0 +1,44 @@
+pool:
+  agents:
+    queue: "macOs-10.03"
+
+steps:
+
+  - task: CmdLine@2
+    inputs:
+      script: 'sudo npm install -g appcenter-cli'
+
+  - task: CmdLine@2
+    inputs:
+      script: 'appcenter login --token 30c3f728c2cc86302fad5f9b5ad213a5e3b3f4b0'
+      
+  - task: Gradle@2
+    inputs:
+      workingDirectory: ''
+      gradleWrapperFile: 'gradlew'
+      gradleOptions: '-Xmx3072m'
+      publishJUnitResults: false
+      testResultsFiles: '**/TEST-*.xml'
+      tasks: 'clean assembleDebug lint test assembleDebugAndroidTest'
+      
+  - task: CopyFiles@2
+    inputs:
+      contents: '**/*.apk'
+      targetFolder: '$(build.artifactStagingDirectory)'
+
+  - task: PublishBuildArtifacts@1
+    inputs:
+      pathToPublish: '$(build.artifactStagingDirectory)'
+      artifactName: 'outputs'
+      artifactType: 'container'
+
+  - task: CmdLine@2
+    inputs:
+      script: 'appcenter test run espresso --app "fuchsjeffe-gmail.com/CI" --devices "fuchsjeffe-gmail.com/pixel" 
+                --app-path app/build/outputs/apk/debug/app-debug.apk   --test-series "master" 
+                --locale "en_US" --build-dir app/build/outputs/apk/androidTest/debug/ --debug'
+
+  - task: PublishTestResultScreenshot@0
+    inputs:
+      organization: 'jefferssonsemin'
+      screenshotFolder: './app/build/reports/androidTests/connected/screenshots/failures/'

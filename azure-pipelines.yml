@@ -1,0 +1,82 @@
+jobs:
+  - job: Phase_1
+    displayName: Roda testes e publica o artefato
+
+    pool:
+      vmImage: 'macOS-10.14'
+
+    steps:
+      - task: CacheBeta@0
+        displayName: 'Cache de imagens do sistema para AVD'
+        inputs:
+          key: 'AVD_IMAGES_PIXEL_28'
+          path: '$(ANDROID_HOME)/system-images'
+          cacheHitVar: 'AVD_IMAGES_RESTORED'
+        continueOnError: true
+        condition: succeededOrFailed()
+
+      - bash: |
+          echo "y" | $ANDROID_HOME/tools/bin/sdkmanager --install 'system-images;android-28;google_apis;x86_64'
+        displayName: 'Baixe e instale a imagem do emulador'
+        condition: ne(variables.AVD_IMAGES_RESTORED, 'true')
+
+      - bash: |
+          echo "no" | $ANDROID_HOME/tools/bin/avdmanager create avd -n android_emulator -k 'system-images;android-28;google_apis;x86_64' -d 17 --force
+          echo "Emulator created successfully $(ANDROID_HOME/emulator/emulator -list-avds), launching it"
+          nohup $ANDROID_HOME/emulator/emulator -avd android_emulator -skin 1080x1920 -no-snapshot -no-audio -no-boot-anim -accel auto -gpu auto -qemu -lcd-density 420 > /dev/null 2>&1 &
+          $ANDROID_HOME/platform-tools/adb wait-for-device shell 'while [[ -z $(getprop sys.boot_completed | tr -d '\r') ]]; do sleep 1; done'
+          $ANDROID_HOME/platform-tools/adb devices
+          echo "Emulator started"
+        displayName: 'Cria e inicia o emulador'
+
+      - bash: |
+          ./gradlew connectedDebugAndroidTest --console=plain  --stacktrace
+          ./gradlew --stop
+        displayName: 'Roda testes instrumentados'
+        continueOnError: true
+
+      - task: PublishTestResults@2
+        displayName: 'Publicar resultados de teste'
+        inputs:
+          testResultsFiles: '**/outputs/androidTest-results/**/TEST*.xml'
+          failTaskOnFailedTests: true
+          testRunTitle: 'Test results'
+        condition: succeededOrFailed()
+
+      - task: UsePythonVersion@0
+        displayName: 'Use Python 3.x'
+        condition: succeededOrFailed()
+      - bash: 'pip install requests'
+        displayName: 'Instala dependencia do pyton'
+        condition: succeededOrFailed()
+
+      - task: PythonScript@0
+        displayName: 'Upload de capturas de tela'
+        continueOnError: true
+        condition: failed()
+        inputs:
+          scriptPath: './ci-cd-scripts/uiTestUploadScreenshot.sh'
+          arguments: '$(System.TeamProject) $(azure.api.pat) $(Build.BuildUri) jefferssonsemin'
+
+      - task: Gradle@2
+        displayName: 'Carrega dependencias do gradle'
+        inputs:
+          workingDirectory: ''
+          gradleWrapperFile: 'gradlew'
+          gradleOptions: '-Xmx3072m'
+          publishJUnitResults: false
+          testResultsFiles: '**/TEST-*.xml'
+          tasks: 'clean build'
+
+      - task: CopyFiles@2
+        displayName: 'Copia arquivos para o diretorio desejado'
+        inputs:
+          contents: '**/*.apk'
+          targetFolder: '$(build.artifactStagingDirectory)'
+
+      - task: PublishBuildArtifacts@1
+        displayName: 'Publica os artefatos gerado'
+        inputs:
+          pathToPublish: '$(build.artifactStagingDirectory)'
+          artifactName: 'outputs'
+          artifactType: 'container'

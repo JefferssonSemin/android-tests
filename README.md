@@ -1,1 +1,1 @@
-# android-tests
+# Projeto android com inumeras abrodagens de testes.

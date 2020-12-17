@@ -1,1 +1,1 @@
-# Projeto android com inumeras abrodagens de testes.
+# Projeto android com inumeras abrodagens de testes

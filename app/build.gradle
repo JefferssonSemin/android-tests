@@ -11,12 +11,17 @@ android {
     buildToolsVersion "29.0.3"
 
     defaultConfig {
+
         testInstrumentationRunner "com.hvn.ci.test.Instrumentation"
         applicationId "com.hvn.ci.test"
         minSdkVersion 23
         targetSdkVersion 30
         versionCode 7
         versionName "1.0"
+    }
+
+    buildFeatures {
+        dataBinding true
     }
 
     buildTypes {
@@ -64,7 +69,8 @@ dependencies {
 
     // (Optional) If you also have JUnit 4-based tests
     testImplementation("junit:junit:4.13.1")
-    testImplementation 'org.mockito:mockito-core:2.23.0'
+    testImplementation 'org.mockito:mockito-inline:2.28.2'
+    testImplementation 'org.mockito:mockito-core:2.28.2'
     testRuntimeOnly("org.junit.vintage:junit-vintage-engine:5.7.0")
 
     // android test

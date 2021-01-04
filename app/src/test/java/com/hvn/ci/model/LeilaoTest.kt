@@ -9,8 +9,6 @@ import org.junit.jupiter.api.condition.DisabledIfEnvironmentVariable
 import org.junit.runner.RunWith
 import org.mockito.junit.MockitoJUnitRunner
 
-
-@RunWith(MockitoJUnitRunner::class)
 class LeilaoTest {
 
     private val leilao: Leilao = Leilao()
@@ -54,5 +52,4 @@ class LeilaoTest {
     fun notOnDeveloperWorkstation() {
         // ...
     }
-
 }

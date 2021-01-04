@@ -3,6 +3,7 @@ plugins {
     id 'kotlin-android'
     id 'base'
     id 'kotlin-kapt'
+    id("de.mannodermaus.android-junit5")
 }
 
 android {
@@ -54,7 +55,17 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
 
     // unit tests
-    testImplementation 'junit:junit:4.13.1'
+
+    testImplementation("org.junit.jupiter:junit-jupiter-api:5.7.0")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.7.0")
+
+    // (Optional) If you need "Parameterized Tests"
+    testImplementation("org.junit.jupiter:junit-jupiter-params:5.7.0")
+
+    // (Optional) If you also have JUnit 4-based tests
+    testImplementation("junit:junit:4.13.1")
+    testImplementation 'org.mockito:mockito-core:2.23.0'
+    testRuntimeOnly("org.junit.vintage:junit-vintage-engine:5.7.0")
 
     // android test
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'

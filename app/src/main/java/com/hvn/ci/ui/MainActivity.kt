@@ -2,25 +2,19 @@ package com.hvn.ci.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
-import android.widget.TextView
-import androidx.lifecycle.ViewModel
-import com.google.android.material.textfield.TextInputEditText
 import com.hvn.ci.R
+import com.hvn.ci.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var viewModel: MainActivityViewModel
+    private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-
-        val botao = findViewById<Button>(R.id.changeTextBt)
-        val botaoExcluir = findViewById<Button>(R.id.buttonLimpar)
-
-        botao.setOnClickListener {
+        binding.buttonAlteraNome.setOnClickListener {
             viewModel.substituiValor()
             //val input = findViewById<TextInputEditText>(R.id.editTextUserInput)
             // val text = findViewById<TextView>(R.id.textToBeChanged)
@@ -28,10 +22,8 @@ class MainActivity : AppCompatActivity() {
             //text.text = input.text.toString()
         }
 
-        botaoExcluir.setOnClickListener {
-            val text = findViewById<TextView>(R.id.textToBeChanged)
-
-            text.text = ""
+        binding.buttonLimpar.setOnClickListener {
+            binding.textTextoCentral.clearComposingText()
         }
     }
 }

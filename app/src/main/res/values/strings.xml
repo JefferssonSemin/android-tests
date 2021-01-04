@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">ci</string>
+    <string name="texto_inicial">Hello World!</string>
+    <string name="hint_edit_texto">Digite o novo texto</string>
+    <string name="button_valor_enviar">Enviar</string>
+    <string name="button_limpar">Limpar</string>
 </resources>

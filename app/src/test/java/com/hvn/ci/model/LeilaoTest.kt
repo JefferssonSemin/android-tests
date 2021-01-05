@@ -6,17 +6,15 @@ import org.junit.jupiter.api.Disabled
 import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.condition.DisabledIfEnvironmentVariable
-import org.junit.runner.RunWith
-import org.mockito.junit.MockitoJUnitRunner
 
 class LeilaoTest {
 
-    private val leilao: Leilao = Leilao()
+    private val leilao: Usuario = Usuario()
 
     @DisplayName("Valida descrição ")
     @Test
     fun testGetDescricao() {
-        val leilao = Leilao("teste")
+        val leilao = Usuario("teste")
 
         val descricaoDevolvida = leilao.descricao
 
@@ -36,7 +34,7 @@ class LeilaoTest {
     @DisplayName("Cenario perfeito")
     @Test
     fun testInAllEnvironments() {
-        val ferias = Leilao("30diasoff")
+        val ferias = Usuario("30diasoff")
 
         val descricaoDevolvida = ferias.descricao
 

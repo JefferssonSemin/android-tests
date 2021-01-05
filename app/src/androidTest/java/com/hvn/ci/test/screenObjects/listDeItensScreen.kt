@@ -12,27 +12,27 @@ class listDeItensScreen {
 
     val textoASerDigitado = "espreso"
     val stringVazia = ""
-    val textoCentral = R.id.textToBeChanged
-    val botaoEnviar = R.id.changeTextBt
-    val botaoLimpar = R.id.buttonLimpar
-    val inputNome = R.id.editTextUserInput
+    val textoCentral = R.id.text_texto_central
+    val botaoEnviar = R.id.button_altera_nome
+    val botaoLimpar = R.id.button_limpar
+    val inputNome = R.id.edit_novo_texto
 
     fun limpa_text() {
 
         onView(withId(botaoLimpar)).perform(click())
 
-        onView(withId(R.id.textToBeChanged))
+        onView(withId(R.id.button_altera_nome))
             .check(matches(withText(stringVazia)))
     }
 
     fun validaTela() {
         // Type text and then press the button.
-        onView(withId(R.id.editTextUserInput))
+        onView(withId(R.id.edit_novo_texto))
             .perform(typeText(textoASerDigitado), closeSoftKeyboard())
-        onView(withId(R.id.changeTextBt)).perform(click())
+        onView(withId(R.id.button_altera_nome)).perform(click())
 
         // Check that the text was changed.
-        onView(withId(R.id.textToBeChanged))
+        onView(withId(R.id.text_texto_central))
             .check(matches(withText(textoASerDigitado)))
     }
 
@@ -41,7 +41,7 @@ class listDeItensScreen {
     }
 
     fun verifica_input() {
-        onView(withId(R.id.editTextUserInput))
+        onView(withId(R.id.edit_novo_texto))
             .perform(typeText(textoASerDigitado), closeSoftKeyboard())
     }
 }

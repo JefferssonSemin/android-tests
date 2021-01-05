@@ -59,6 +59,12 @@ dependencies {
     implementation 'com.google.android.material:material:1.2.1'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
 
+    def retrofit_version = "2.6.0"
+    api "com.squareup.retrofit2:retrofit:$retrofit_version"
+    api "com.squareup.retrofit2:converter-moshi:$retrofit_version"
+
+    def okhttp3_version = "3.8.1"
+    implementation "com.squareup.okhttp3:logging-interceptor:$okhttp3_version"
     // unit tests
 
     testImplementation("org.junit.jupiter:junit-jupiter-api:5.7.0")
@@ -72,6 +78,7 @@ dependencies {
     testImplementation 'org.mockito:mockito-inline:2.28.2'
     testImplementation 'org.mockito:mockito-core:2.28.2'
     testRuntimeOnly("org.junit.vintage:junit-vintage-engine:5.7.0")
+
 
     // android test
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'

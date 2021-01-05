@@ -1,5 +1,6 @@
 package com.hvn.ci.model
 
+import com.hvn.ci.domain.entities.Usuario
 import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.Assumptions.assumingThat
 import org.junit.jupiter.api.Disabled

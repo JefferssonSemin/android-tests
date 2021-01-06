@@ -1,13 +1,16 @@
 package com.hvn.ci.ui
 
-import android.app.Application
-import android.opengl.ETC1.isValid
-import android.widget.Toast
 import androidx.databinding.ObservableField
-import androidx.lifecycle.AndroidViewModel
-import java.lang.Exception
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import com.hvn.ci.domain.usecases.BuscarUsuario
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
-class MainActivityViewModel(application: Application) : AndroidViewModel(application) {
+class MainActivityViewModel(
+    private val buscarUsuario: BuscarUsuario
+) : ViewModel() {
 
     private val valueEdit: ObservableField<String> = ObservableField()
     private val resultado: ObservableField<String> = ObservableField()
@@ -17,17 +20,12 @@ class MainActivityViewModel(application: Application) : AndroidViewModel(applica
     }
 
     fun realizaAlteracao() {
+        viewModelScope.launch {
+            val estado =
+                withContext(Dispatchers.Default) { buscarUsuario.invoke("JefferssonSemin") }
 
-        try {
-            val distance = valueEdit.get().toString()
-
-            if (distance.isNotEmpty())
-                resultado.set(distance)
-
-        } catch (ex: Exception) {
-            // Toast.makeText(this, , Toast.LENGTH_LONG)
+            resultado.set("")
         }
-
     }
 
 }

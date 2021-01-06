@@ -58,6 +58,10 @@ dependencies {
     implementation 'com.google.android.material:material:1.2.1'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
 
+    def lifecycle_version="2.1.0-rc01"
+    api "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
+    api "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
+
     def retrofit_version = "2.6.0"
     api "com.squareup.retrofit2:retrofit:$retrofit_version"
     api "com.squareup.retrofit2:converter-moshi:$retrofit_version"
@@ -85,6 +89,8 @@ dependencies {
     testImplementation 'org.mockito:mockito-inline:2.28.2'
     testImplementation 'org.mockito:mockito-core:2.28.2'
     testRuntimeOnly("org.junit.vintage:junit-vintage-engine:5.7.0")
+
+
 
 
     // android test

@@ -5,11 +5,10 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
 import com.hvn.ci.R
-import com.hvn.ci.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
-    //private lateinit var binding: ActivityMainBinding
+    private lateinit var viewModel: UsuarioViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,6 +18,7 @@ class MainActivity : AppCompatActivity() {
         val botaoLimpar = findViewById<Button>(R.id.button_limpar)
 
         botaoAlterarNome.setOnClickListener {
+            viewModel.realizaAlteracao()
             //val input = findViewById<TextInputEditText>(R.id.editTextUserInput)
             // val text = findViewById<TextView>(R.id.textToBeChanged)
 

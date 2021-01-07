@@ -9,15 +9,17 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 class UsuarioViewModel(
+    private val nome: String,
     private val buscarUsuario: BuscarUsuario
 ) : ViewModel() {
     class Factory(
+        private val nome: String,
         private val buscarUsuario: BuscarUsuario,
     ) : ViewModelProvider.NewInstanceFactory() {
         @Suppress("UNCHECKED_CAST")
         override fun <T : ViewModel?> create(modelClass: Class<T>): T {
             if (modelClass.isAssignableFrom(UsuarioViewModel::class.java)) {
-                return UsuarioViewModel(buscarUsuario) as T
+                return UsuarioViewModel(nome, buscarUsuario) as T
             }
             throw IllegalArgumentException("ViewModel not found.")
         }
@@ -28,6 +30,7 @@ class UsuarioViewModel(
 
     private val valueEdit: ObservableField<String> = ObservableField()
     private val resultado: ObservableField<String> = ObservableField()
+
 
     fun substituiValor() {
         realizaAlteracao()
@@ -41,5 +44,4 @@ class UsuarioViewModel(
             resultado.set("")
         }
     }
-
 }

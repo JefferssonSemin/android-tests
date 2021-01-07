@@ -64,6 +64,10 @@ dependencies {
 
     implementation "androidx.fragment:fragment-ktx:1.2.5"
 
+    def navigation_version = "2.3.2"
+    api "androidx.navigation:navigation-fragment-ktx:$navigation_version"
+    api "androidx.navigation:navigation-ui-ktx:$navigation_version"
+
     def retrofit_version = "2.6.0"
     api "com.squareup.retrofit2:retrofit:$retrofit_version"
     api "com.squareup.retrofit2:converter-moshi:$retrofit_version"

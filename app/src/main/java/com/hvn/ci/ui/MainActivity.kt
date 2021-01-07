@@ -2,33 +2,26 @@ package com.hvn.ci.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import android.widget.TextView
+import androidx.navigation.NavController
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.NavHostFragment.findNavController
 import com.hvn.ci.R
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var viewModel: UsuarioViewModel
+    private val navController: NavController by lazy { findNavController(R.id.fragment_nav_host) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val botaoAlterarNome = findViewById<Button>(R.id.button_altera_nome)
-        val botaoLimpar = findViewById<Button>(R.id.button_limpar)
-
-        botaoAlterarNome.setOnClickListener {
-            viewModel.realizaAlteracao()
-            //val input = findViewById<TextInputEditText>(R.id.editTextUserInput)
-            // val text = findViewById<TextView>(R.id.textToBeChanged)
-
-            //text.text = input.text.toString()
-        }
-
-        botaoLimpar.setOnClickListener {
-            val textoCentral = findViewById<TextView>(R.id.text_texto_central)
-
-            textoCentral.text = ""
+        navController.addOnDestinationChangedListener { _, destination, _ ->
+            when (destination.id) {
+                R.id.usuarioFragment -> UsuarioFragment()
+            }
         }
     }
 }

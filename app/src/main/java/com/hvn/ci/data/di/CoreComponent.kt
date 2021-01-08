@@ -6,6 +6,6 @@ import dagger.Component
 
 @Component(modules = [UserModule::class])
 interface CoreComponent {
-    fun providerUserRepository(): UserRepository
-    fun providerUserRemoteSource(): UserRemoteSource
+    fun userRepository(): UserRepository
+    fun UserRemoteSource(): UserRemoteSource
 }

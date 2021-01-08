@@ -5,7 +5,7 @@ import android.content.Intent
 import androidx.test.espresso.intent.Intents
 import androidx.test.filters.LargeTest
 import androidx.test.rule.ActivityTestRule
-import com.hvn.ci.ui.MainActivity
+import com.hvn.ci.app.MainActivity
 import com.hvn.ci.test.screenObjects.listDeItensScreen
 import io.cucumber.java.es.Dado
 import io.cucumber.java.pt.Entao

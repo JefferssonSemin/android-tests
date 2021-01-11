@@ -20,6 +20,8 @@ class UsuarioViewModel @ViewModelInject constructor(
             val response =
                 withContext(Dispatchers.Default) { repository.buscaUsuario(nome) }
 
+            if (response != null)
+                _usuario.value = response
         }
     }
 }

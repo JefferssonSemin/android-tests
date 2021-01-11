@@ -1,6 +1,6 @@
 package com.hvn.ci.data.remote
 
-import com.example.rickandmorty.utils.Resource
+import com.hvn.ci.utils.Resource
 import retrofit2.Response
 import timber.log.Timber
 

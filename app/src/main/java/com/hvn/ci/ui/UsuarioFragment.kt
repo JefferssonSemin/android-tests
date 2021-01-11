@@ -1,45 +1,37 @@
 package com.hvn.ci.ui
 
-import android.content.Context
+import UsuarioViewModel
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import com.hvn.ci.R
+import androidx.lifecycle.Observer
 import com.hvn.ci.databinding.UsuarioFragmentBinding
-import com.hvn.ci.app.coreComponent
-import com.hvn.ci.ui.di.DaggerUsuarioComponent
-import com.hvn.ci.ui.di.UsuarioModule
-import dagger.android.support.AndroidSupportInjection
-import javax.inject.Inject
+import dagger.hilt.android.AndroidEntryPoint
 
-class UsuarioFragment(override val viewModel: UsuarioViewModel, override val layout: Int) : BaseFragment<UsuarioViewModel>() {
+@AndroidEntryPoint
+class UsuarioFragment : Fragment() {
 
+    private val viewModel: UsuarioViewModel by viewModels()
     private lateinit var binding: UsuarioFragmentBinding
-
-    @Inject
-    lateinit var usuarioViewModel: UsuarioViewModel
-
-    override fun onAttach(context: Context) {
-        AndroidSupportInjection.inject(this)
-        super.onAttach(context)
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
 
-
         binding = UsuarioFragmentBinding.inflate(inflater, container, false)
-
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        usuarioViewModel.substituiValor()
+        viewModel.buscaUsuario(binding.editNovoTexto.toString())
+        viewModel.usuario.observe(viewLifecycleOwner, Observer {
+            binding.editNovoTexto.setText(it.name)
+        })
     }
 }

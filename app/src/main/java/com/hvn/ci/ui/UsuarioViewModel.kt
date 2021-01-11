@@ -1,47 +1,23 @@
-package com.hvn.ci.ui
-
-import androidx.databinding.ObservableField
+import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.*
+import com.hvn.ci.data.repositories.UserRepositoryImpl
 import com.hvn.ci.domain.entities.Usuario
-import com.hvn.ci.domain.usecases.BuscarUsuario
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class UsuarioViewModel(
-    private val nome: String,
-    private val buscarUsuario: BuscarUsuario
+class UsuarioViewModel @ViewModelInject constructor(
+    private val repository: UserRepositoryImpl
 ) : ViewModel() {
-    class Factory(
-        private val nome: String,
-        private val buscarUsuario: BuscarUsuario,
-    ) : ViewModelProvider.NewInstanceFactory() {
-        @Suppress("UNCHECKED_CAST")
-        override fun <T : ViewModel?> create(modelClass: Class<T>): T {
-            if (modelClass.isAssignableFrom(UsuarioViewModel::class.java)) {
-                return UsuarioViewModel(nome, buscarUsuario) as T
-            }
-            throw IllegalArgumentException("ViewModel not found.")
-        }
-    }
 
     private val _usuario = MutableLiveData<Usuario>()
     val usuario: LiveData<Usuario> = _usuario
 
-    private val valueEdit: ObservableField<String> = ObservableField()
-    private val resultado: ObservableField<String> = ObservableField()
-
-
-    fun substituiValor() {
-        realizaAlteracao()
-    }
-
-    fun realizaAlteracao() {
+    fun buscaUsuario(nome: String) {
         viewModelScope.launch {
-            val estado =
-                withContext(Dispatchers.Default) { buscarUsuario.invoke("JefferssonSemin") }
+            val response =
+                withContext(Dispatchers.Default) { repository.buscaUsuario(nome) }
 
-            resultado.set("")
         }
     }
 }

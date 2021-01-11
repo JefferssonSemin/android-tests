@@ -6,6 +6,6 @@ import retrofit2.http.GET
 import retrofit2.http.Path
 
 interface UserService {
-    @GET("usuario/{nome}")
+    @GET("users/{nome}")
     suspend fun buscaUsuario(@Path("nome") nome: String): Response<Usuario>
 }

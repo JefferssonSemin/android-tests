@@ -1,3 +1,5 @@
+package com.hvn.ci.ui
+
 import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.*
 import com.hvn.ci.data.repositories.UserRepositoryImpl

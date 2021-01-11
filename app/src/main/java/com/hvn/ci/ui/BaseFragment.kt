@@ -14,6 +14,7 @@ import androidx.lifecycle.ViewModel
  * @author Kurt Renzo Acosta
  * @since 10/8/17 <version>
  */
+
 abstract class BaseFragment<T : ViewModel> : Fragment() {
     abstract val viewModel: T
     abstract val layout: Int

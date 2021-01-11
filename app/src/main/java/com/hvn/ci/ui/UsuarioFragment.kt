@@ -1,6 +1,5 @@
 package com.hvn.ci.ui
 
-import UsuarioViewModel
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View

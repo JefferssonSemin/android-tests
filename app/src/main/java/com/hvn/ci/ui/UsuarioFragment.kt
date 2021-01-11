@@ -11,6 +11,7 @@ import androidx.lifecycle.Observer
 import com.bumptech.glide.Glide
 import com.hvn.ci.databinding.UsuarioFragmentBinding
 import dagger.hilt.android.AndroidEntryPoint
+import java.net.URI
 
 @AndroidEntryPoint
 class UsuarioFragment : Fragment() {
@@ -38,6 +39,12 @@ class UsuarioFragment : Fragment() {
                 Glide.with(this).load(url).into(binding.imageViewUsuario)
                 binding.textTextoCentral.text = it.name
             })
+        }
+
+        binding.buttonLimpar.setOnClickListener {
+            binding.imageViewUsuario.setImageResource(0)
+            binding.textTextoCentral.text = ""
+            binding.editNovoTexto.setText("")
         }
     }
 }

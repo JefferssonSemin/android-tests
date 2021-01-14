@@ -6,5 +6,8 @@
     <string name="button_limpar">Limpar</string>
     <string name="git_users">Git users</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello Detalhes usuario</string>
+    <string name="hello_blank_fragment">Hello detalhes usuario</string>
+
+    <string name="detalhes_usuario">Detalhes usuario</string>
+    <string name="deep_link">Tecnologias com deep link</string>
 </resources>

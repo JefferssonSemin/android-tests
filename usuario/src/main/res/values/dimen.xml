@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="text_view_assinatura_usuario">10sp</dimen>
+    <dimen name="text_view_titulo_usuario">24sp</dimen>
+    <dimen name="text_view_titulo_detalhes">34sp</dimen>
+    <dimen name="button_margin_top">450dp</dimen>
+    <dimen name="tamanho_imagem">200dp</dimen>
+    <dimen name="margin">20dp</dimen>
+    <dimen name="margin_edit">10dp</dimen>
+    <dimen name="margin_top_button_detalhes_usuario">100dp</dimen>
+</resources>

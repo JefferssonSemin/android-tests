@@ -7,40 +7,41 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
+        android:layout_margin="10dp"
         tools:context=".presentation.HomeFragment">
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/textView_titulo_home"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="@dimen/margin"
             android:gravity="center_horizontal"
             android:text="@string/bem_vindo_ao_finder_users"
-            android:textSize="24sp"
+            android:textSize="@dimen/text_size_titulo"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/textView_descricao_home"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="108dp"
+            android:layout_marginTop="@dimen/margin_top_text_descricao"
             android:gravity="center_horizontal"
             android:text="@string/o_projeto_tem_como_intuito_exemplificar_algumas_aborgadens_do_desenvolvimento_mobile"
-            android:textSize="20sp"
+            android:textSize="@dimen/text_size_subtitulo"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView" />
+            app:layout_constraintTop_toBottomOf="@+id/textView_titulo_home" />
 
         <Button
             android:id="@+id/button_tecnologias"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="204dp"
+            android:layout_marginStart="@dimen/margin"
+            android:layout_marginTop="@dimen/margin_top_button"
+            android:layout_marginEnd="@dimen/margin"
             android:background="@color/black"
             android:gravity="center"
             android:text="@string/ver_tecnologias_utilizadas"
@@ -48,7 +49,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+            app:layout_constraintTop_toBottomOf="@+id/textView_descricao_home" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

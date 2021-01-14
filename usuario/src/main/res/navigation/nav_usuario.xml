@@ -14,7 +14,7 @@
             android:id="@+id/action_usuarioFragment_to_detalhesUsuarioFragment"
             app:destination="@id/detalhesUsuarioFragment" />
 
-        <deepLink app:uri="myApp://appFragment" />
+        <deepLink app:uri="myApp://detalhesUsuarioFragment" />
     </fragment>
 
     <fragment
@@ -22,5 +22,6 @@
         android:name="com.hvn.usuario.presentation.DetalhesUsuarioFragment"
         android:label="Detalhes"
         tools:layout="@layout/usuario_fragment" />
+
 
 </navigation>

@@ -18,13 +18,9 @@
         android:id="@+id/tecnologiasFragment"
         android:name="com.hvn.home.presentation.TecnologiasFragment"
         android:label="TecnologiasFragment"
-        tools:layout="@layout/tecnologias_fragment" />
-    <fragment
-        android:id="@+id/detalhesUsuarioFragment2"
-        android:name="com.hvn.usuario.presentation.DetalhesUsuarioFragment"
-        android:label="DetalhesUsuarioFragment">
-        <deepLink app:uri="myApp://detalhesUsuarioFragment" />
-    </fragment>
+        tools:layout="@layout/tecnologias_fragment">
 
+        <deepLink app:uri="myApp://tecnologiasFragment" />
+    </fragment>
 
 </navigation>

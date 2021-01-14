@@ -5,4 +5,6 @@
     <dimen name="margin_top_button">233dp</dimen>
     <dimen name="margin_top_text_descricao">130dp</dimen>
     <dimen name="text_size_titulo">24sp</dimen>
+    <dimen name="text_size_subtitulo">20sp</dimen>
+
 </resources>

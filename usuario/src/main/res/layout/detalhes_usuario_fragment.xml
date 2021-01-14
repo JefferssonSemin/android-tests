@@ -6,21 +6,35 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_margin="@dimen/margin"
         tools:context=".presentation.DetalhesUsuarioFragment">
 
         <!-- TODO: Update blank fragment layout -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="@string/hello_blank_fragment" />
+            android:gravity="center"
+            android:text="@string/hello_blank_fragment"
+            android:textSize="@dimen/text_view_titulo_detalhes" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="bottom"
+            android:orientation="horizontal"
+            android:text="Desenvolvido por jeff"
+            android:textSize="@dimen/text_view_assinatura_usuario" />
 
         <Button
             android:id="@+id/button_detalhes_usuario"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="340dp"
-            android:text="Detalhes usuario"
+            android:layout_marginTop="@dimen/button_margin_top"
+            android:background="@color/black"
+            android:text="@string/deep_link"
+            android:textColor="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 

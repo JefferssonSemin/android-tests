@@ -109,6 +109,18 @@
                       </LayoutPositions>
                     </value>
                   </entry>
+                  <entry key="tecnologiasFragment2">
+                    <value>
+                      <LayoutPositions>
+                        <option name="myPosition">
+                          <Point>
+                            <option name="x" value="55" />
+                            <option name="y" value="-376" />
+                          </Point>
+                        </option>
+                      </LayoutPositions>
+                    </value>
+                  </entry>
                   <entry key="usuarioFragment">
                     <value>
                       <LayoutPositions>
@@ -117,6 +129,15 @@
                             <option name="x" value="50" />
                             <option name="y" value="50" />
                           </Point>
+                        </option>
+                        <option name="myPositions">
+                          <map>
+                            <entry key="action_usuarioFragment_to_detalhesUsuarioFragment">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
+                          </map>
                         </option>
                       </LayoutPositions>
                     </value>

@@ -28,6 +28,7 @@ class DetalhesUsuarioFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+
         binding.buttonDetalhesUsuario.setOnClickListener {
             val uri = Uri.parse("myApp://tecnologiasFragment")
             findNavController().navigate(uri)

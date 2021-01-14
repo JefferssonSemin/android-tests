@@ -5,7 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.Navigation
+import androidx.navigation.fragment.findNavController
 import com.hvn.home.R
 import com.hvn.home.databinding.HomeFragmentBinding
 
@@ -25,8 +25,8 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.buttonTecnologias.setOnClickListener {
-            Navigation.findNavController(it)
-                .navigate(R.id.action_homeFragment_to_tecnologiasFragment)
+            val action = HomeFragmentDirections.actionHomeFragmentToTecnologiasFragment()
+            findNavController().navigate(action)
         }
     }
 }

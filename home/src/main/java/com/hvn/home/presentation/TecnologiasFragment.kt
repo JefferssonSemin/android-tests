@@ -1,14 +1,12 @@
 package com.hvn.home.presentation
 
 import android.net.Uri
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
-import com.hvn.home.R
 import com.hvn.home.databinding.TecnologiasFragmentBinding
 
 class TecnologiasFragment : Fragment() {
@@ -26,6 +24,12 @@ class TecnologiasFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+
+        arguments?.let {
+            val safeArgs = HomeFragmentArgs.fromBundle(it)
+            val valor = safeArgs.argsTeste
+
+        }
 
         binding.buttonDetalhesTecnologias.setOnClickListener {
             val uri = Uri.parse("myApp://detalhesUsuarioFragment")

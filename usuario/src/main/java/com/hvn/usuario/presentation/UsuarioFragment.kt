@@ -5,6 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.Navigation
+import com.hvn.usuario.R
 import com.hvn.usuario.databinding.UsuarioFragmentBinding
 
 
@@ -33,6 +35,11 @@ class UsuarioFragment : Fragment() {
             binding.imageViewUsuario.setImageResource(0)
             binding.textTextoCentral.text = ""
             binding.editNovoTexto.setText("")
+        }
+
+        binding.buttonDetalhesUsuario.setOnClickListener {
+            Navigation.findNavController(it)
+                .navigate(R.id.action_usuarioFragment_to_detalhesUsuarioFragment)
         }
     }
 }

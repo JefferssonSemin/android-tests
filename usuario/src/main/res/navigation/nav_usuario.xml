@@ -1,10 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/nav_main"
+    android:id="@+id/nav_usuario"
     app:startDestination="@id/usuarioFragment">
     <fragment
         android:id="@+id/usuarioFragment"
         android:name="com.hvn.usuario.presentation.UsuarioFragment"
-        android:label="UsuarioFragment" />
+        android:label="UsuarioFragment" >
+        <action
+            android:id="@+id/action_usuarioFragment_to_detalhesUsuarioFragment"
+            app:destination="@id/detalhesUsuarioFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detalhesUsuarioFragment"
+        android:name="com.hvn.usuario.presentation.DetalhesUsuarioFragment"
+        android:label="DetalhesUsuarioFragment" />
 </navigation>

@@ -71,5 +71,16 @@
             app:layout_constraintTop_toBottomOf="@+id/button_limpar"
             tools:srcCompat="@tools:sample/avatars" />
 
+        <Button
+            android:id="@+id/button_detalhes_usuario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="88dp"
+            android:text="Detalhes usuario"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageViewUsuario" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

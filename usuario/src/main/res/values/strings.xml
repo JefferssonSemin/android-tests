@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">ci</string>
+    <string name="texto_inicial">Hello World!</string>
+    <string name="hint_edit_texto">Digite um usuario git</string>
+    <string name="button_valor_enviar">Buscar</string>
+    <string name="button_limpar">Limpar</string>
+    <string name="git_users">Git users</string>
+</resources>

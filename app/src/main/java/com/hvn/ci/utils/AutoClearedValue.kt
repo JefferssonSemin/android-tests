@@ -1,4 +1,5 @@
 package com.hvn.ci.utils
+
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.DefaultLifecycleObserver
 import androidx.lifecycle.LifecycleOwner

@@ -5,6 +5,9 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/ci.iml" filepath="$PROJECT_DIR$/.idea/modules/ci.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/ci.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/ci.app.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/core/ci.app.core.iml" filepath="$PROJECT_DIR$/.idea/modules/app/core/ci.app.core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/home/ci.app.home.iml" filepath="$PROJECT_DIR$/.idea/modules/app/home/ci.app.home.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/home/ci.home.iml" filepath="$PROJECT_DIR$/.idea/modules/home/ci.home.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/usuario/ci.usuario.iml" filepath="$PROJECT_DIR$/.idea/modules/usuario/ci.usuario.iml" />
     </modules>
   </component>
 </project>

@@ -2,7 +2,6 @@ package com.hvn.ci.ui
 
 import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.*
-import com.hvn.ci.data.interfaceRepositories.UserRepository
 import com.hvn.ci.data.repositories.UserRepositoryImpl
 import com.hvn.ci.domain.entities.Usuario
 import com.hvn.ci.utils.validaUsuario
@@ -11,7 +10,7 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 class UsuarioViewModel @ViewModelInject constructor(
-    private val repository: UserRepository
+    private val repository: UserRepositoryImpl
 ) : ViewModel() {
 
     private val _usuario = MutableLiveData<Usuario>()

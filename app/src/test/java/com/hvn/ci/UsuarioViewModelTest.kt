@@ -1,14 +1,8 @@
 package com.hvn.ci
 
 import com.hvn.ci.domain.entities.Usuario
-import com.hvn.ci.ui.UsuarioViewModel
-import com.hvn.ci.util.TodoTestRepository
-import org.junit.Assert.assertEquals
-import org.junit.Assert.assertNotNull
 import org.junit.Before
 import org.junit.Rule
-import org.junit.Test
-import org.junit.internal.runners.statements.ExpectException
 import org.junit.rules.ExpectedException
 
 class UsuarioViewModelTest {
@@ -20,14 +14,15 @@ class UsuarioViewModelTest {
 
     @Before
     fun setup() {
-        val usuariosLista = ArrayList<Usuario>()
-        var usuario = Usuario("Jeffersson", "asd", "teste", "teste", "teste")
+        val usuariosLista = ArrayList<com.hvn.ci.domain.entities.Usuario>()
+        var usuario =
+            com.hvn.ci.domain.entities.Usuario("Jeffersson", "asd", "teste", "teste", "teste")
         usuariosLista.add(usuario)
-        usuario = Usuario("Jeffersson", "asd", "teste", "teste", "teste")
+        usuario = com.hvn.ci.domain.entities.Usuario("Jeffersson", "asd", "teste", "teste", "teste")
         usuariosLista.add(usuario)
-        usuario = Usuario("Jeffersson", "asd", "teste", "teste", "teste")
+        usuario = com.hvn.ci.domain.entities.Usuario("Jeffersson", "asd", "teste", "teste", "teste")
         usuariosLista.add(usuario)
-        usuario = Usuario("Jeffersson", "asd", "teste", "teste", "teste")
+        usuario = com.hvn.ci.domain.entities.Usuario("Jeffersson", "asd", "teste", "teste", "teste")
         usuariosLista.add(usuario)
 
 //        usuarioRepository = TodoTestRepository(usuariosLista)

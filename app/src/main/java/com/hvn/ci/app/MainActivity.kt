@@ -5,7 +5,7 @@ import android.os.Bundle
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import com.hvn.ci.R
-import com.hvn.ci.ui.UsuarioFragment
+import com.hvn.ci.ui.AppFragment
 import dagger.hilt.android.AndroidEntryPoint
 
 
@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
 
         navController.addOnDestinationChangedListener { _, destination, _ ->
             when (destination.id) {
-                R.id.usuarioFragment -> UsuarioFragment()
+                R.id.appFragment -> AppFragment()
             }
         }
 

@@ -2,12 +2,12 @@ package com.hvn.usuario.presentation
 
 import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.*
-import com.hvn.ci.data.repositories.UserRepositoryImpl
-import com.hvn.ci.domain.entities.Usuario
-import com.hvn.ci.utils.validaUsuario
+import data.repositories.UserRepositoryImpl
+import domain.entities.Usuario
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import utils.validaUsuario
 
 class UsuarioViewModel @ViewModelInject constructor(
     private val repository: UserRepositoryImpl

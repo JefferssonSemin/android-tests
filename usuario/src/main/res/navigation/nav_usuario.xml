@@ -6,10 +6,12 @@
     <fragment
         android:id="@+id/usuarioFragment"
         android:name="com.hvn.usuario.presentation.UsuarioFragment"
-        android:label="UsuarioFragment" >
+        android:label="UsuarioFragment">
         <action
             android:id="@+id/action_usuarioFragment_to_detalhesUsuarioFragment"
             app:destination="@id/detalhesUsuarioFragment" />
+
+        <deepLink app:uri="myApp://appFragment" />
     </fragment>
     <fragment
         android:id="@+id/detalhesUsuarioFragment"

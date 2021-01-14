@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="margin">30dp</dimen>
+    <dimen name="margin_top_button">233dp</dimen>
+    <dimen name="margin_top_text_descricao">130dp</dimen>
+    <dimen name="text_size_titulo">24sp</dimen>
+</resources>

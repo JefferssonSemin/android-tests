@@ -2,15 +2,11 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/nav_characters"
-        android:icon="@drawable/ic_launcher_foreground"
-        android:title="app" />
+        android:id="@+id/nav_home"
+        android:icon="@drawable/ic_home"
+        android:title="@string/home" />
     <item
-        android:id="@+id/nav_locations"
-        android:icon="@drawable/ic_launcher_foreground"
-        android:title="home" />
-    <item
-        android:id="@+id/nav_episodes"
-        android:icon="@drawable/ic_launcher_foreground"
-        android:title="usuario" />
+        android:id="@+id/nav_usuario"
+        android:icon="@drawable/ic_user"
+        android:title="@string/usuario" />
 </menu>

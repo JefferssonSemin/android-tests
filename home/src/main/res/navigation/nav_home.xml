@@ -14,10 +14,7 @@
         <action
             android:id="@+id/action_homeFragment_to_tecnologiasFragment"
             app:destination="@id/tecnologiasFragment" />
-        <argument
-            android:name="argsTeste"
-            app:argType="string"
-            android:defaultValue='"aaaaa"' />
+
     </fragment>
     <fragment
         android:id="@+id/tecnologiasFragment"

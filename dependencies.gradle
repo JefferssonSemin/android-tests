@@ -4,6 +4,7 @@ ext {
     name_version = "1.0"
     sdk_version = 30
     build_tools_version = "30.0.2"
+    build_tools_gradle = "4.1.1"
     min_sdk_version = 23
     application_id = "br.com.havan.vendamais"
 
@@ -40,11 +41,14 @@ ext {
     material_version = '1.2.1'
 
     //Test
-    junit_version = '4.12'
-    espresso_version = '3.2.0'
+    junit_version = '4.13.1'
+    junit_5 = '5.7.0'
+    junit_5_class = "1.6.2.0"
+    espresso_version = '3.3.0'
     runner_version = '1.1.1'
     mockwebserver_version = '3.14.1'
     mockito_version = '2.2.0'
+    mockito_inline = '2.28.2'
 
     //Coroutine
     coroutine_version = '1.4.1'
@@ -105,7 +109,7 @@ ext {
             retrofit             : "com.squareup.retrofit2:retrofit:$retrofit_version",
             retrofitRxAdapter    : "com.squareup.retrofit2:adapter-rxjava2:$retrofit_version",
             retrofitGsonConverter: "com.squareup.retrofit2:converter-gson:$retrofit_version",
-            gson                  : "com.google.code.gson:gson:$gsonVersion",
+            gson                 : "com.google.code.gson:gson:$gsonVersion",
             lifeCycle            : "androidx.lifecycle:lifecycle-extensions:$lifecycle_version",
             lifeCycleVm          : "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version",
             retrofitInterceptor  : "com.squareup.okhttp3:logging-interceptor:$interceptor_version",
@@ -129,11 +133,12 @@ ext {
             lottie               : "com.airbnb.android:lottie:$lottie_version"
     ]
 
-    testDependecies = [
-            junit                 : "junit:junit:$junit_version",
-            espresso              : "androidx.test.espresso:espresso-core:$espresso_version",
-            runner                : "androidx.test:runner:$runner_version",
-            mockWebserver         : "com.squareup.okhttp3:mockwebserver:$mockwebserver_version",
-            mockito               : "com.nhaarman.mockitokotlin2:mockito-kotlin:$mockito_version"
+    testDependencies = [
+            junit        : "junit:junit:$junit_version",
+            espresso     : "androidx.test.espresso:espresso-core:$espresso_version",
+            runner       : "androidx.test:runner:$runner_version",
+            mockWebserver: "com.squareup.okhttp3:mockwebserver:$mockwebserver_version",
+            mockito      : "com.nhaarman.mockitokotlin2:mockito-kotlin:$mockito_version",
+            mockitoInline: "org.mockito:mockito-inline:$mockito_inline"
     ]
 }

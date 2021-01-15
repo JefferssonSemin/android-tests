@@ -26,9 +26,9 @@ class TecnologiasFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
 
         arguments?.let {
-            val safeArgs = HomeFragmentArgs.fromBundle(it)
-            val valor = safeArgs.argsTeste
-
+            val safeArgs = TecnologiasFragmentArgs.fromBundle(it)
+            val tec = safeArgs.tec
+            binding.textViewTecnologias.text = tec.toString()
         }
 
         binding.buttonDetalhesTecnologias.setOnClickListener {

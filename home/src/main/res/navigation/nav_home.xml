@@ -23,6 +23,10 @@
         tools:layout="@layout/tecnologias_fragment">
 
         <deepLink app:uri="myApp://tecnologiasFragment" />
+        <argument
+            android:name="tec"
+            app:argType="string"
+            app:nullable="true" />
     </fragment>
 
 </navigation>

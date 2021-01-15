@@ -25,7 +25,7 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.buttonTecnologias.setOnClickListener {
-            val action = HomeFragmentDirections.actionHomeFragmentToTecnologiasFragment()
+            val action = HomeFragmentDirections.actionHomeFragmentToTecnologiasFragment("SafeArgs")
             findNavController().navigate(action)
         }
     }

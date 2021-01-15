@@ -32,7 +32,7 @@ class TecnologiasFragment : Fragment() {
         }
 
         binding.buttonDetalhesTecnologias.setOnClickListener {
-            val uri = Uri.parse("myApp://detalhesUsuarioFragment")
+            val uri = Uri.parse("myApp://detalhesUsuarioFragment/23")
             findNavController().navigate(uri)
         }
     }

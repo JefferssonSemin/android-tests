@@ -14,14 +14,18 @@
             android:id="@+id/action_usuarioFragment_to_detalhesUsuarioFragment"
             app:destination="@id/detalhesUsuarioFragment" />
 
-        <deepLink app:uri="myApp://detalhesUsuarioFragment" />
     </fragment>
 
     <fragment
         android:id="@+id/detalhesUsuarioFragment"
         android:name="com.hvn.usuario.presentation.DetalhesUsuarioFragment"
         android:label="Detalhes"
-        tools:layout="@layout/usuario_fragment" />
+        tools:layout="@layout/usuario_fragment">
+        <argument
+            android:name="argsDeep"
+            app:argType="integer" />
+        <deepLink app:uri="myApp://detalhesUsuarioFragment/{argsDeep}" />
+    </fragment>
 
 
 </navigation>

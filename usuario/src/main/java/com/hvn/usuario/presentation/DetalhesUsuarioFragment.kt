@@ -28,6 +28,11 @@ class DetalhesUsuarioFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        arguments?.let {
+            val safeArgs = DetalhesUsuarioFragmentArgs.fromBundle(it)
+            val args = safeArgs.argsDeep
+            binding.textViewTitulo.text = args.toString()
+        }
 
         binding.buttonDetalhesUsuario.setOnClickListener {
             val uri = Uri.parse("myApp://tecnologiasFragment")

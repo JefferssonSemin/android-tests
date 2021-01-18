@@ -6,8 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
-import com.hvn.home.R
 import com.hvn.home.databinding.HomeFragmentBinding
+import com.hvn.home.domain.entities.Tecnologia
 
 class HomeFragment : Fragment() {
 
@@ -25,7 +25,8 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.buttonTecnologias.setOnClickListener {
-            val action = HomeFragmentDirections.actionHomeFragmentToTecnologiasFragment("SafeArgs")
+            val model = Tecnologia("Kotlin", "Uma linguagem de programacao")
+            val action = HomeFragmentDirections.actionHomeFragmentToTecnologiasFragment(model.nome)
             findNavController().navigate(action)
         }
     }

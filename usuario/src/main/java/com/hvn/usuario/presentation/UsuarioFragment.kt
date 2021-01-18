@@ -6,8 +6,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
+import androidx.navigation.fragment.findNavController
 import com.hvn.usuario.R
 import com.hvn.usuario.databinding.UsuarioFragmentBinding
+import com.hvn.usuario.domain.entities.Usuario
 
 
 class UsuarioFragment : Fragment() {
@@ -38,7 +40,7 @@ class UsuarioFragment : Fragment() {
         }
 
         binding.buttonDetalhesUsuario.setOnClickListener {
-            Navigation.findNavController(it)
+            findNavController()
                 .navigate(R.id.action_usuarioFragment_to_detalhesUsuarioFragment)
         }
     }

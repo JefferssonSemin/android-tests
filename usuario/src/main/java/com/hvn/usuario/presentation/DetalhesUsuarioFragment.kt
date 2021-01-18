@@ -35,7 +35,7 @@ class DetalhesUsuarioFragment : Fragment() {
         }
 
         binding.buttonDetalhesUsuario.setOnClickListener {
-            val uri = Uri.parse("myApp://tecnologiasFragment")
+            val uri = Uri.parse("myApp://tecnologiasFragment/teste")
             findNavController().navigate(uri)
         }
     }

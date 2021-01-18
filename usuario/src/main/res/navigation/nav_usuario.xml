@@ -21,11 +21,11 @@
         android:name="com.hvn.usuario.presentation.DetalhesUsuarioFragment"
         android:label="Detalhes"
         tools:layout="@layout/usuario_fragment">
+
         <argument
             android:name="argsDeep"
-            app:argType="integer" />
+            app:argType="integer"
+            android:defaultValue="0" />
         <deepLink app:uri="myApp://detalhesUsuarioFragment/{argsDeep}" />
     </fragment>
-
-
 </navigation>

@@ -28,7 +28,7 @@ class TecnologiasFragment : Fragment() {
         arguments?.let {
             val safeArgs = TecnologiasFragmentArgs.fromBundle(it)
             val tec = safeArgs.tec
-            binding.textViewTecnologias.text = tec.toString()
+            binding.textViewTecnologias.text = tec
         }
 
         binding.buttonDetalhesTecnologias.setOnClickListener {

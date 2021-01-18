@@ -1,4 +1,4 @@
-package com.hvn.ci.ui
+package com.hvn.ci.presentation
 
 import android.net.Uri
 import android.os.Bundle

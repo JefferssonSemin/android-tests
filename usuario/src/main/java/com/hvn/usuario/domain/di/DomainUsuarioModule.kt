@@ -8,7 +8,7 @@ import org.koin.dsl.module
 val useCasePreVenda = module {
     single<UsuarioUseCase> {
         UsuarioUseCaseImpl(
-            repo = get()
+            usuarioRepository = get()
         )
     }
 }

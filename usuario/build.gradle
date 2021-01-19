@@ -54,6 +54,7 @@ dependencies {
     //Retrofit
     implementation dependencies.retrofit
     implementation dependencies.retrofitGsonConverter
+    implementation dependencies.retrofitRxAdapter
 
     //Lifecycle
     implementation dependencies.lifeCycleVm

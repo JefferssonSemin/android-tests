@@ -7,7 +7,7 @@ import org.koin.dsl.module
 val repositoryModule = module {
     single<UsuarioRepository> {
         UsuarioRepositoryImpl(
-            usuarioRemoteSource = get()
+            remoteSource = get()
         )
     }
 }

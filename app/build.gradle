@@ -63,6 +63,11 @@ dependencies {
     implementation dependencies.navigationFragment
     implementation dependencies.navigationUi
 
+    // Koin for Kotlin apps
+    implementation dependencies.koinCore
+    implementation dependencies.koin
+    implementation dependencies.koinViewModel
+
     def testDependencies = rootProject.ext.testDependencies
     //Junit
     testImplementation testDependencies.junit
@@ -73,4 +78,7 @@ dependencies {
     //Mockito
     testImplementation testDependencies.mockitoInline
     testImplementation testDependencies.mockito
+
+    // Koin
+    testImplementation testDependencies.koinTest
 }

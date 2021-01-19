@@ -23,6 +23,7 @@ class MainActivity : AppCompatActivity() {
         ).build()
     }
 
+
     private val navController: NavController by lazy { findNavController(R.id.fragment_nav_host) }
 
     override fun onCreate(savedInstanceState: Bundle?) {

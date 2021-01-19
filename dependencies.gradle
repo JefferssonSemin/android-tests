@@ -4,7 +4,7 @@ ext {
     name_version = "1.0"
     sdk_version = 30
     build_tools_version = "30.0.2"
-    build_tools_gradle = '4.2.0-beta03'
+    build_tools_gradle = '7.0.0-alpha04'
     min_sdk_version = 23
     application_id = "br.com.havan.vendamais"
 
@@ -15,7 +15,7 @@ ext {
     jvm_target_version = '1.8'
 
     //Koin
-    koin_version = '2.1.5'
+    koin_version = '2.2.0'
 
     //Navigation
     navigation_version = '2.3.2'
@@ -102,6 +102,7 @@ ext {
             constraintLayout     : "androidx.constraintlayout:constraintlayout:$constraint_layout_version",
             recyclerView         : "androidx.recyclerview:recyclerview:$recycler_version",
             koin                 : "org.koin:koin-android:$koin_version",
+            koinCore             : "org.koin:koin-core:$koin_version",
             koinViewModel        : "org.koin:koin-androidx-viewmodel:$koin_version",
             navigationFragment   : "androidx.navigation:navigation-fragment-ktx:$navigation_version",
             navigationUi         : "androidx.navigation:navigation-ui-ktx:$navigation_version",
@@ -139,6 +140,7 @@ ext {
             runner       : "androidx.test:runner:$runner_version",
             mockWebserver: "com.squareup.okhttp3:mockwebserver:$mockwebserver_version",
             mockito      : "com.nhaarman.mockitokotlin2:mockito-kotlin:$mockito_version",
-            mockitoInline: "org.mockito:mockito-inline:$mockito_inline"
+            mockitoInline: "org.mockito:mockito-inline:$mockito_inline",
+            koinTest     : "org.koin:koin-test:$koin_version"
     ]
 }

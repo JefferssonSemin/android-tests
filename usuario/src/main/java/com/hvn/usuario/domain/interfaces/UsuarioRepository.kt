@@ -4,6 +4,6 @@ import com.hvn.usuario.data.remote.UsuarioData
 
 interface UsuarioRepository {
 
-    fun buscarUsuario(nome: String): UsuarioData
+   suspend fun buscarUsuario(nome: String): UsuarioData
 
 }

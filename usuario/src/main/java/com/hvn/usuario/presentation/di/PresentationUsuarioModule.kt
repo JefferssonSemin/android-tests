@@ -58,7 +58,7 @@ inline fun <reified T> createWebService(okHttpClient: OkHttpClient): T {
     return Retrofit.Builder()
         .addConverterFactory(GsonConverterFactory.create())
         .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-        .baseUrl("https://api.github.com/")
+        .baseUrl("https://api.github.com")
         .client(okHttpClient)
         .build()
         .create(T::class.java)

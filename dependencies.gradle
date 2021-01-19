@@ -71,7 +71,7 @@ ext {
     guava_version = '27.1-jre'
 
     //Toast
-    toast_version = '1.4.2'
+    toast_version = '1.5.0'
 
     //Hawk
     hawk_version = '2.0.1'

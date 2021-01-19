@@ -68,6 +68,12 @@ dependencies {
     implementation dependencies.koin
     implementation dependencies.koinViewModel
 
+    //Glide
+    implementation dependencies.glide
+
+    //Toast
+    implementation dependencies.toast
+
     def testDependencies = rootProject.ext.testDependencies
     //Junit
     testImplementation testDependencies.junit

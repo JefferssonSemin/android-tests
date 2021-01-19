@@ -1,17 +1,7 @@
 package com.hvn.usuario.data.remote
 
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
-
 class UsuarioRemoteSourceImpl(private val usuarioService: UsuarioService) : UsuarioRemoteSource {
 
-    override fun buscarUsuario(nome: String): UsuarioData {
-        CoroutineScope(Dispatchers.IO).launch {
+    override suspend fun buscarUsuario(nome: String) = usuarioService.buscarUsuario(nome)
 
-            val response = usuarioService.buscarUsuario(nome)
-            val data = response
-        }
-        return UsuarioData("", "aaaa", "", "")
-    }
 }

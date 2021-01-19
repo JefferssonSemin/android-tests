@@ -72,6 +72,7 @@ class UsuarioFragment() : Fragment() {
         if (responseData.sucesso) {
             val modelo = responseData.modelo!!
             binding.textTextoCentral.text = modelo.name
+            binding.textTextoLocalizacao.text = modelo.location
             Glide.with(this).load(modelo.avatar_url.toUri()).into(binding.imageViewUsuario)
         } else
             Toasty.error(

@@ -11,8 +11,10 @@ import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
 import com.hvn.usuario.R
+import com.hvn.usuario.data.dataModels.ResponseData
+import com.hvn.usuario.data.dataModels.UsuarioData
 import com.hvn.usuario.databinding.UsuarioFragmentBinding
-import com.hvn.usuario.domain.entities.Usuario
+import es.dmoral.toasty.Toasty
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 
@@ -40,11 +42,12 @@ class UsuarioFragment() : Fragment() {
             if (!nome.isNullOrEmpty())
                 buscarUsuarios(nome)
             else
-                Toast.makeText(
+                Toasty.warning(
                     requireContext(),
-                    "Insira um username válido",
-                    Toast.LENGTH_LONG
-                ).show()
+                    "Digite um username válido.",
+                    Toast.LENGTH_SHORT,
+                    true
+                ).show();
 
         }
 
@@ -65,9 +68,18 @@ class UsuarioFragment() : Fragment() {
         })
     }
 
-    private fun carregaCampos(usuario: Usuario) {
-        binding.textTextoCentral.text = usuario.name
-        Glide.with(this).load(usuario.avatar_url.toUri()).into(binding.imageViewUsuario);
+    private fun carregaCampos(responseData: ResponseData<UsuarioData>) {
+        if (responseData.sucesso) {
+            val modelo = responseData.modelo!!
+            binding.textTextoCentral.text = modelo.name
+            Glide.with(this).load(modelo.avatar_url.toUri()).into(binding.imageViewUsuario)
+        } else
+            Toasty.error(
+                requireContext(),
+                responseData.mensagem,
+                Toast.LENGTH_SHORT,
+                true
+            ).show()
     }
 
     private fun limpaCampos() {

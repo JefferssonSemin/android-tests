@@ -1,4 +1,4 @@
-package com.hvn.usuario.data.remote
+package com.hvn.usuario.data.dataModels
 
 import com.google.gson.annotations.SerializedName
 

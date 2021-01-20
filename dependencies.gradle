@@ -9,6 +9,7 @@ ext {
     application_id = "br.com.havan.vendamais"
 
     kotlin_version = '1.4.21'
+    composeVersion = "1.0.0-alpha10"
     gradle_version = '4.0.1'
     legacy_support_version = '1.0.0'
     constraint_layout_version = '2.0.4'
@@ -76,6 +77,9 @@ ext {
     //Hawk
     hawk_version = '2.0.1'
 
+    //Room
+    room_version = "2.2.6"
+
     //gson
     gsonVersion = '2.8.0'
 
@@ -126,6 +130,9 @@ ext {
             guava                : "com.google.guava:guava:$guava_version",
             toast                : "com.github.GrenderG:Toasty:$toast_version",
             hawk                 : "com.orhanobut:hawk:$hawk_version",
+            roomRuntime          : "androidx.room:room-runtime:$room_version",
+            roomKotlin           : "androidx.room:room-ktx:$room_version",
+            roomKapt             : "androidx.room:room-compiler:$room_version",
             cardview             : "com.android.support:cardview-v7:$cardview_version",
             carousel             : "com.synnapps:carouselview:$carousel_version",
             canarinho            : "br.com.concrete:canarinho:$canarinho_version",
@@ -141,6 +148,7 @@ ext {
             mockWebserver: "com.squareup.okhttp3:mockwebserver:$mockwebserver_version",
             mockito      : "com.nhaarman.mockitokotlin2:mockito-kotlin:$mockito_version",
             mockitoInline: "org.mockito:mockito-inline:$mockito_inline",
-            koinTest     : "org.koin:koin-test:$koin_version"
+            koinTest     : "org.koin:koin-test:$koin_version",
+            roomTest     : "androidx.room:room-testing:$room_version"
     ]
 }

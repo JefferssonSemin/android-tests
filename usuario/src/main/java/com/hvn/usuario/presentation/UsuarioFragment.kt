@@ -84,8 +84,9 @@ class UsuarioFragment() : Fragment() {
     }
 
     private fun limpaCampos() {
-        binding.imageViewUsuario.setImageResource(0)
-        binding.textTextoCentral.text = ""
+        binding.imageViewUsuario.setImageResource(R.drawable.ic_launcher_foreground)
+        binding.textTextoCentral.text = "Name"
+        binding.textTextoLocalizacao.text = "Localization"
         binding.editNovoTexto.setText("")
     }
 }

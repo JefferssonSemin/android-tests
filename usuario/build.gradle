@@ -2,7 +2,9 @@ plugins {
     id 'com.android.library'
     id 'kotlin-android'
     id 'kotlin-kapt'
-    id 'androidx.navigation.safeargs'
+
+    // removida na nova versão do android, descomentar para versões abaixo do 4.2
+    //id 'androidx.navigation.safeargs'
 }
 
 android {
@@ -17,11 +19,21 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments += [
+                        "room.schemaLocation"  : "$projectDir/schemas".toString(),
+                        "room.incremental"     : "true",
+                        "room.expandProjection": "true"]
+            }
+        }
     }
 
     buildFeatures {
         dataBinding true
         viewBinding true
+        compose true
     }
 
     buildTypes {
@@ -30,12 +42,20 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
+
+    composeOptions {
+        kotlinCompilerVersion rootProject.kotlin_version
+        kotlinCompilerExtensionVersion rootProject.composeVersion
+    }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
     kotlinOptions {
         jvmTarget = rootProject.ext.jvm_target_version
+        useIR = true
     }
 }
 
@@ -73,6 +93,16 @@ dependencies {
 
     //Toast
     implementation dependencies.toast
+
+    //Compose
+    implementation "androidx.compose.runtime:runtime:$rootProject.composeVersion"
+    implementation "androidx.compose.ui:ui:$rootProject.composeVersion"
+    implementation "androidx.compose.foundation:foundation:$rootProject.composeVersion"
+    implementation "androidx.compose.foundation:foundation-layout:$rootProject.composeVersion"
+    implementation "androidx.compose.material:material:$rootProject.composeVersion"
+    implementation "androidx.compose.runtime:runtime-livedata:$rootProject.composeVersion"
+    implementation "androidx.compose.ui:ui-tooling:$rootProject.composeVersion"
+    implementation "com.google.android.material:compose-theme-adapter:$rootProject.composeVersion"
 
     def testDependencies = rootProject.ext.testDependencies
     //Junit

@@ -3,7 +3,9 @@ plugins {
     id 'kotlin-android'
     id 'kotlin-android-extensions'
     id 'kotlin-kapt'
-    id 'androidx.navigation.safeargs'
+
+    // removida na nova versão do android, descomentar para versões abaixo do 4.2
+    //id 'androidx.navigation.safeargs'
 }
 
 android {

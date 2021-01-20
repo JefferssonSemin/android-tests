@@ -1,6 +1,6 @@
 package com.hvn.usuario.presentation.di
 
-import com.hvn.usuario.presentation.UsuarioViewModel
+import com.hvn.usuario.presentation.viewModels.UsuarioViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 

@@ -7,25 +7,33 @@
 
     <fragment
         android:id="@+id/usuarioFragment"
-        android:name="com.hvn.usuario.presentation.UsuarioFragment"
+        android:name="com.hvn.usuario.presentation.fragments.UsuarioFragment"
         android:label="Usuário"
         tools:layout="@layout/usuario_fragment">
         <action
             android:id="@+id/action_usuarioFragment_to_detalhesUsuarioFragment"
             app:destination="@id/detalhesUsuarioFragment" />
+        <action
+            android:id="@+id/action_usuarioFragment_to_historicoFragment"
+            app:destination="@id/historicoFragment" />
 
     </fragment>
 
     <fragment
         android:id="@+id/detalhesUsuarioFragment"
-        android:name="com.hvn.usuario.presentation.DetalhesUsuarioFragment"
+        android:name="com.hvn.usuario.presentation.fragments.DetalhesUsuarioFragment"
         android:label="Detalhes"
         tools:layout="@layout/usuario_fragment">
 
         <argument
             android:name="argsDeep"
-            app:argType="integer"
-            android:defaultValue="0" />
+            android:defaultValue="0"
+            app:argType="integer" />
         <deepLink app:uri="myApp://detalhesUsuarioFragment/{argsDeep}" />
     </fragment>
+    <fragment
+        android:id="@+id/historicoFragment"
+        android:name="com.hvn.usuario.presentation.fragments.HistoricoFragment"
+        android:label="HistoricoFragment"
+        tools:layout="@layout/historico_fragment" />
 </navigation>

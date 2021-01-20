@@ -29,7 +29,7 @@ object DataManager {
         )
 
         val idPos = cursor.getColumnIndex(UsuarioEntry.COLUMN_ID)
-        val namePos = cursor.getColumnIndex(UsuarioEntry.TABLE_NAME)
+        val namePos = cursor.getColumnIndex(UsuarioEntry.COLUMN_NAME)
         val locationPos = cursor.getColumnIndex(UsuarioEntry.COLUMN_LOCATION)
         val urlPos = cursor.getColumnIndex(UsuarioEntry.COLUMN_URL)
 

@@ -9,6 +9,7 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello detalhes usuario</string>
 
-    <string name="detalhes_usuario">Detalhes usuario</string>
+    <string name="historico_usuario">Histórico usuario</string>
     <string name="deep_link">Tecnologias com deep link</string>
+    <string name="pesquisas_recentes_titulo">Pesquisas recentes</string>
 </resources>

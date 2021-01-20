@@ -1,4 +1,4 @@
-package com.hvn.usuario.presentation
+package com.hvn.usuario.presentation.viewModels
 
 import androidx.lifecycle.ViewModel
 

@@ -1,6 +1,8 @@
-package com.hvn.usuario.presentation
+package com.hvn.usuario.presentation.fragments
 
+import android.app.Activity.RESULT_OK
 import android.content.ContentValues
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -14,20 +16,22 @@ import com.bumptech.glide.Glide
 import com.hvn.usuario.R
 import com.hvn.usuario.data.dataModels.ResponseData
 import com.hvn.usuario.data.dataModels.UsuarioData
+import com.hvn.usuario.data.room.DataManager
 import com.hvn.usuario.data.room.DatabaseHelper
 import com.hvn.usuario.data.room.UsuarioDbContract
 import com.hvn.usuario.databinding.UsuarioFragmentBinding
 import com.hvn.usuario.domain.entities.Usuario
+import com.hvn.usuario.presentation.adapters.HistoricoListAdapter
+import com.hvn.usuario.presentation.viewModels.UsuarioViewModel
 import es.dmoral.toasty.Toasty
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 
 class UsuarioFragment() : Fragment() {
 
-    // Lazy Inject ViewModel
     private val usuarioViewModel: UsuarioViewModel by viewModel()
-
     private lateinit var databaseHelper: DatabaseHelper
+    private lateinit var adaptador: HistoricoListAdapter
 
     private lateinit var binding: UsuarioFragmentBinding
 
@@ -62,9 +66,9 @@ class UsuarioFragment() : Fragment() {
             limpaCampos()
         }
 
-        binding.buttonDetalhesUsuario.setOnClickListener {
+        binding.buttonHistoricoUsuario.setOnClickListener {
             findNavController()
-                .navigate(R.id.action_usuarioFragment_to_detalhesUsuarioFragment)
+                .navigate(R.id.action_usuarioFragment_to_historicoFragment)
         }
     }
 
@@ -105,6 +109,8 @@ class UsuarioFragment() : Fragment() {
         }
 
         val result = db.insert(UsuarioDbContract.UsuarioEntry.TABLE_NAME, null, values)
+        activity?.setResult(RESULT_OK, Intent())
+
         if (result > 0)
             Toasty.success(
                 requireContext(),
@@ -112,6 +118,14 @@ class UsuarioFragment() : Fragment() {
                 Toast.LENGTH_SHORT,
                 true
             ).show()
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        if (resultCode == RESULT_OK) {
+            adaptador = HistoricoListAdapter(DataManager.buscaTodosUsuarios(databaseHelper))
+        }
     }
 
 

@@ -1,4 +1,4 @@
-package com.hvn.usuario.presentation
+package com.hvn.usuario.presentation.fragments
 
 import android.net.Uri
 import android.os.Bundle
@@ -6,9 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
-import com.hvn.usuario.R
 import com.hvn.usuario.databinding.DetalhesUsuarioFragmentBinding
 
 class DetalhesUsuarioFragment : Fragment() {

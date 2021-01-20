@@ -6,6 +6,7 @@
     <dimen name="button_margin_top">450dp</dimen>
     <dimen name="tamanho_imagem">200dp</dimen>
     <dimen name="margin">20dp</dimen>
+    <dimen name="margin_card">8dp</dimen>
     <dimen name="margin_edit">10dp</dimen>
     <dimen name="margin_top_button_detalhes_usuario">100dp</dimen>
 </resources>

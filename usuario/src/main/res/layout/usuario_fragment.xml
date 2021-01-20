@@ -91,12 +91,12 @@
             app:layout_constraintTop_toBottomOf="@+id/text_texto_central" />
 
         <Button
-            android:id="@+id/button_detalhes_usuario"
+            android:id="@+id/button_historico_usuario"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_top_button_detalhes_usuario"
             android:background="@color/black"
-            android:text="@string/detalhes_usuario"
+            android:text="@string/historico_usuario"
             android:textColor="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"

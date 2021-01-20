@@ -31,9 +31,6 @@
             app:argType="string"
             app:nullable="true" />
 
-        <!--        <argument-->
-        <!--            android:name="tec"-->
-        <!--            app:argType="com.hvn.home.domain.entities.Tecnologia"/>-->
     </fragment>
 
 </navigation>

@@ -1,20 +1,19 @@
-package com.hvn.ci.room
+package com.hvn.usuario.data.room
 
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
-import com.hvn.usuario.data.room.UsuarioDbContract
 
 class DatabaseHelper(context: Context?) :
     SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
 
 
     override fun onCreate(db: SQLiteDatabase?) {
-        db?.execSQL(UsuarioDbContract.SQL_CREATE_ENTRIES)
+        db?.execSQL(UsuarioDbContract.UsuarioEntry.SQL_CREATE_ENTRIES)
     }
 
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
-        db?.execSQL(UsuarioDbContract.SQL_DROP_TABLE)
+        db?.execSQL(UsuarioDbContract.UsuarioEntry.SQL_DROP_TABLE)
         onCreate(db)
     }
 

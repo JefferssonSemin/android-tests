@@ -8,6 +8,7 @@ buildscript {
         classpath("de.mannodermaus.gradle.plugins:android-junit5:$junit_5_class")
         classpath "com.android.tools.build:gradle:$build_tools_gradle"
         classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$navigation_version"
+        classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.4.21'
     }
 }
 

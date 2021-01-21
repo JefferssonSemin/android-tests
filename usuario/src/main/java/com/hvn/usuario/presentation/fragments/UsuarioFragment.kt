@@ -109,15 +109,10 @@ class UsuarioFragment() : Fragment() {
         }
 
         val result = db.insert(UsuarioDbContract.UsuarioEntry.TABLE_NAME, null, values)
-        activity?.setResult(RESULT_OK, Intent())
 
-        if (result > 0)
-            Toasty.success(
-                requireContext(),
-                "Histórico salvo com sucesso",
-                Toast.LENGTH_SHORT,
-                true
-            ).show()
+        if (result > 0)// Condição preguiçosa minha (gambi)
+            activity?.setResult(RESULT_OK, Intent())
+
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {

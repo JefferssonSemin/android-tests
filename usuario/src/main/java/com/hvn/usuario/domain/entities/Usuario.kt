@@ -5,4 +5,8 @@ class Usuario(
     val name: String,
     val localization: String,
     val url: String
-)
+) {
+    override fun toString(): String {
+        return "id : $id, name: $name, location, $localization, url: $url"
+    }
+}

@@ -1,14 +1,15 @@
 package com.hvn.usuario.presentation.adapters
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.hvn.usuario.R
 import com.hvn.usuario.data.room.DataManager
 import com.hvn.usuario.data.room.DatabaseHelper
 import com.hvn.usuario.domain.entities.Usuario
+import com.hvn.usuario.presentation.fragments.HistoricoFragmentDirections
 import kotlinx.android.synthetic.main.list_item.view.*
 import java.util.ArrayList
 
@@ -39,9 +40,14 @@ class HistoricoListAdapter(private val listaUsuarios: ArrayList<Usuario>) :
 
         fun setListener(id: Long?) {
             itemView.setOnClickListener {
-                var usuario = DataManager.buscaUsuarioPorId(databaseHelper, id.toString())
+                val usuario = DataManager.buscaUsuarioPorId(databaseHelper, id.toString())
 
-                Log.i("teste", usuario.toString())
+                val action =
+                    HistoricoFragmentDirections.actionHistoricoFragmentToDetalhesUsuarioFragment(
+                        usuario = usuario
+                    )
+
+                itemView.findNavController().navigate(action)
             }
         }
     }

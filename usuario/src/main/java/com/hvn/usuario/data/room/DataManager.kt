@@ -55,6 +55,7 @@ object DataManager {
         val db = databaseHelper.readableDatabase
 
         val columns = arrayOf(
+            UsuarioEntry.COLUMN_ID,
             UsuarioEntry.COLUMN_NAME,
             UsuarioEntry.COLUMN_LOCATION,
             UsuarioEntry.COLUMN_URL
@@ -73,16 +74,18 @@ object DataManager {
             null
         )
 
+        val idPos = cursor.getColumnIndex(UsuarioEntry.COLUMN_ID)
         val namePos = cursor.getColumnIndex(UsuarioEntry.COLUMN_NAME)
         val locationPos = cursor.getColumnIndex(UsuarioEntry.COLUMN_LOCATION)
         val urlPos = cursor.getColumnIndex(UsuarioEntry.COLUMN_URL)
 
         while (cursor.moveToNext()) {
+            val id = cursor.getLong(idPos)
             val name = cursor.getString(namePos)
             val location = cursor.getString(locationPos)
             val url = cursor.getString(urlPos)
 
-            usuario = Usuario(null, name, location, url)
+            usuario = Usuario(id, name, location, url)
         }
 
         cursor.close()
@@ -96,15 +99,26 @@ object DataManager {
 
         val values = ContentValues()
         with(values) {
-            put(UsuarioDbContract.UsuarioEntry.COLUMN_NAME, usuario.name)
-            put(UsuarioDbContract.UsuarioEntry.COLUMN_LOCATION, usuario.localization)
-            put(UsuarioDbContract.UsuarioEntry.COLUMN_URL, usuario.url)
+            put(UsuarioEntry.COLUMN_NAME, usuario.name)
+            put(UsuarioEntry.COLUMN_LOCATION, usuario.localization)
+            put(UsuarioEntry.COLUMN_URL, usuario.url)
         }
 
         val selection = UsuarioEntry.COLUMN_ID + " LIKE ? "
         val selectionArgs = arrayOf(usuario.id.toString())
 
         db.update(UsuarioEntry.TABLE_NAME, values, selection, selectionArgs)
+    }
+
+    fun deletaUsuario(databaseHelper: DatabaseHelper, userId: String): Int {
+
+        val db = databaseHelper.writableDatabase
+
+
+        val selection = UsuarioEntry.COLUMN_ID + " LIKE ? "
+        val selectionArgs = arrayOf(userId)
+
+        return db.delete(UsuarioEntry.TABLE_NAME, selection, selectionArgs)
     }
 
 }

@@ -42,4 +42,5 @@ class HistoricoFragment : Fragment() {
             adapter = adaptador
         }
     }
+
 }

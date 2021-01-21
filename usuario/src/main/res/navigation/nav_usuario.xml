@@ -11,29 +11,41 @@
         android:label="Usuário"
         tools:layout="@layout/usuario_fragment">
         <action
-            android:id="@+id/action_usuarioFragment_to_detalhesUsuarioFragment"
-            app:destination="@id/detalhesUsuarioFragment" />
-        <action
             android:id="@+id/action_usuarioFragment_to_historicoFragment"
             app:destination="@id/historicoFragment" />
 
     </fragment>
 
     <fragment
+        android:id="@+id/historicoFragment"
+        android:name="com.hvn.usuario.presentation.fragments.HistoricoFragment"
+        android:label="HistoricoFragment"
+        tools:layout="@layout/historico_fragment">
+        <action
+            android:id="@+id/action_historicoFragment_to_detalhesUsuarioFragment"
+            app:destination="@id/detalhesUsuarioFragment" />
+    </fragment>
+
+    <fragment
         android:id="@+id/detalhesUsuarioFragment"
         android:name="com.hvn.usuario.presentation.fragments.DetalhesUsuarioFragment"
         android:label="Detalhes"
-        tools:layout="@layout/usuario_fragment">
+        tools:layout="@layout/detalhes_usuario_fragment">
 
         <argument
             android:name="argsDeep"
             android:defaultValue="0"
             app:argType="integer" />
         <deepLink app:uri="myApp://detalhesUsuarioFragment/{argsDeep}" />
+
+        <argument
+            android:name="usuario"
+            app:argType="com.hvn.usuario.domain.entities.Usuario"
+            app:nullable="true"
+            android:defaultValue="@null"/>
+        <action
+            android:id="@+id/action_detalhesUsuarioFragment_to_usuarioFragment"
+            app:destination="@id/usuarioFragment" />
     </fragment>
-    <fragment
-        android:id="@+id/historicoFragment"
-        android:name="com.hvn.usuario.presentation.fragments.HistoricoFragment"
-        android:label="HistoricoFragment"
-        tools:layout="@layout/historico_fragment" />
+
 </navigation>

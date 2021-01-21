@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.hvn.home.databinding.HomeFragmentBinding
-import com.hvn.home.databinding.HomeFragmentBindingImpl
 import com.hvn.home.domain.entities.Tecnologia
 
 class HomeFragment : Fragment() {

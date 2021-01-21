@@ -5,39 +5,83 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_margin="@dimen/margin"
         tools:context=".presentation.fragments.DetalhesUsuarioFragment">
 
-        <!-- TODO: Update blank fragment layout -->
         <TextView
-            android:id="@+id/textView_titulo"
+            android:id="@+id/textView_name"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center"
-            android:text="@string/hello_blank_fragment"
-            android:textSize="@dimen/text_view_titulo_detalhes" />
+            android:layout_marginTop="@dimen/margin_card"
+            android:gravity="center_horizontal"
+            android:textSize="@dimen/text_view_titulo_detalhes"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="@string/hello_blank_fragment" />
 
         <TextView
+            android:id="@+id/textView_location"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginTop="16dp"
+            android:textSize="@dimen/descricao"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView_name"
+            tools:text="@string/hello_blank_fragment" />
+
+        <TextView
+            android:id="@+id/textView_url"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="11dp"
+            android:textSize="@dimen/descricao"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView_location"
+            tools:text="@string/hello_blank_fragment" />
+
+        <ImageView
+            android:id="@+id/imageView_usuario"
+            android:layout_width="369dp"
+            android:layout_height="@dimen/tamanho_imagem"
+            android:layout_marginTop="44dp"
+            android:src="@drawable/ic_launcher_foreground"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView_url"
+            tools:srcCompat="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="16dp"
             android:gravity="bottom"
             android:orientation="horizontal"
             android:text="Desenvolvido por jeff"
-            android:textSize="@dimen/text_view_assinatura_usuario" />
+            android:textSize="@dimen/text_view_assinatura_usuario"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button_excluir_usuario" />
 
         <Button
-            android:id="@+id/button_detalhes_usuario"
+            android:id="@+id/button_excluir_usuario"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/button_margin_top"
-            android:background="@color/black"
-            android:text="@string/deep_link"
+            android:layout_marginTop="100dp"
+            android:background="#831"
+            android:text="@string/excluir_item"
             android:textColor="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/imageView_usuario" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

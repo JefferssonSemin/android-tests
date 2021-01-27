@@ -40,7 +40,7 @@ object DataManager {
             val location = cursor.getString(locationPos)
             val url = cursor.getString(urlPos)
 
-            usuarios.add(Usuario(id, name, location, url))
+            usuarios.add(Usuario(id, name, location, url, ""))
         }
 
         cursor.close()
@@ -78,14 +78,17 @@ object DataManager {
         val namePos = cursor.getColumnIndex(UsuarioEntry.COLUMN_NAME)
         val locationPos = cursor.getColumnIndex(UsuarioEntry.COLUMN_LOCATION)
         val urlPos = cursor.getColumnIndex(UsuarioEntry.COLUMN_URL)
+        val urlImage = cursor.getColumnIndex(UsuarioEntry.COLUMN_URL_IMAGE)
 
         while (cursor.moveToNext()) {
             val id = cursor.getLong(idPos)
             val name = cursor.getString(namePos)
             val location = cursor.getString(locationPos)
             val url = cursor.getString(urlPos)
+            val url_image = cursor.getString(urlImage)
 
-            usuario = Usuario(id, name, location, url)
+
+            usuario = Usuario(id, name, location, url, url_image)
         }
 
         cursor.close()

@@ -4,7 +4,7 @@ ext {
     name_version = "1.0"
     sdk_version = 30
     build_tools_version = "30.0.2"
-    build_tools_gradle = '7.0.0-alpha04'
+    build_tools_gradle = '4.1.1'
     min_sdk_version = 23
     application_id = "br.com.havan.vendamais"
 

@@ -36,7 +36,8 @@ class UsuarioViewModel(private val usuarioUseCase: UsuarioUseCase) : ViewModel()
             null,
             usuarioData.name,
             usuarioData.url,
-            usuarioData.avatar_url
+            usuarioData.company,
+            usuarioData.avatar_url,
         )
     }
 
